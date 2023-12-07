@@ -1,6 +1,7 @@
 @import "variables";
 @import "component-header";
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;700&display=swap");
+@import "component-main";
+@import "component-footer";
 
 :root {
   scroll-behavior: smooth;
@@ -9,4 +10,5 @@
 .l-body {
   @include reset;
   @include center;
+  font-family: "Lato", sans-serif;
 }

@@ -1,0 +1,44 @@
+.l-footer {
+  background-color: $color-neutral-stone-200;
+  border-top: 1px solid $color-neutral-stone-300;
+}
+
+.footer__wrapper {
+  @include reset;
+  padding: 2rem;
+  max-width: 1110px;
+  margin: 0 auto;
+  @include flex(column, space-between, center, 1rem)
+}
+
+.footer-links {
+  @include reset;
+  @include flex(row, end, center, 3rem);
+
+  &__item {
+    @include reset;
+    list-style: none;
+  }
+  &__link {
+    @include reset;
+    text-decoration: none;
+    color: $color-primary-Dark-Gray;
+
+    &:hover {
+      color: $color-neutral-stone-600;
+      padding-bottom: 2px;
+      border-bottom: 1px solid $color-neutral-stone-600;
+    }
+    
+    &:active {
+      color: $color-primary-Yellow-Pale;
+      border-bottom: 1px solid $color-primary-Yellow-Pale;
+    }
+  }
+}
+
+.copyright {
+  @include reset;
+  color: $color-neutral-stone-600;
+  text-align: end;
+}

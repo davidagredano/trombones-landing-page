@@ -1,0 +1,149 @@
+#features,
+#how-it-works,
+#pricing {
+  scroll-margin-top: 96px;
+}
+
+.l-main {
+  @include flex(column, center, center, 0);
+  margin: 0 auto;
+}
+
+.section {
+  background-color: $color-neutral-stone-50;
+  width: 100%;
+  
+  & + .section {
+    border-top: 1px solid $color-neutral-stone-200;
+  }
+
+  &--darker-bg {
+    background-color: $color-neutral-stone-100;
+  }
+  &__wrapper {
+    @include reset;
+    padding: 2rem;
+    max-width: 1110px;
+    margin: 0 auto;
+
+    &--hero {
+      @include flex(column, center, center, 1rem);
+    }
+    &--cards {
+      @include flex(column, center, center, 3rem);
+    }
+    &--video {
+      padding: 2rem 0;
+    }
+    &--pricing-cards {
+      @include flex(row, center, center, 2rem);
+      flex-wrap: wrap;
+    }
+  }
+
+  &__heading {
+    @include reset;
+    text-align: center;
+    &--hero {
+    }
+  }
+}
+
+.form {
+  @include flex(column, center, center, 1rem);
+  width: min(100%, 275px);
+
+  &__input {
+    @include reset;
+    padding: 0.25rem;
+    width: 100%;
+  }
+}
+
+.button-primary {
+  @include reset;
+  display: block;
+  height: 2.5rem;
+  padding: 0 1.5rem;
+  @include font(1rem, $font-weight-bold, $color-primary-Dark-Gray);
+  text-transform: uppercase;
+  background-color: $color-primary-Yellow-Pale;
+  border: 0;
+  border-radius: 0.2rem;
+  line-height: 1rem;
+
+  &:hover {
+    cursor: pointer;
+    background-color: darken($color-primary-Yellow-Pale, 10%);
+  }
+}
+
+.card {
+  &__wrapper {
+    &--icon {
+      visibility: hidden;
+      height: 0;
+    }
+
+    &--text {
+      text-align: center;
+    }
+  }
+
+  &__heading {
+    @include reset;
+    margin-bottom: 0.5rem;
+  }
+
+  &__copy {
+    @include reset;
+  }
+}
+
+.video {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.pricing-card {
+  @include reset;
+  border: 1px solid $color-neutral-stone-600;
+  border-radius: 0.2rem;
+  text-align: center;
+  flex: 1 1 250px;
+
+  &__header {
+    @include reset;
+    padding: 1rem;
+    background-color: $color-neutral-stone-200;
+    border-radius: 0.2rem 0.2rem 0 0;
+    border-bottom: 1px solid $color-neutral-stone-300;
+  }
+
+  &__title {
+    @include reset;
+    font-size: 1rem;
+  }
+
+  &__body {
+    @include reset;
+    padding: 1rem;
+    @include flex(column, center, center, 1rem);
+  }
+  &__price {
+    @include reset;
+    font-size: 1.5rem;
+    font-weight: $font-weight-bold;
+  }
+  &__list {
+    @include reset;
+    list-style-type: none;
+  }
+  &__item {
+    @include reset;
+    margin-bottom: 1rem;
+  }
+  &__button {
+    @include reset;
+  }
+}

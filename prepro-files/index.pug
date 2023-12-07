@@ -5,7 +5,9 @@ html(lang="en")
     meta(http-equiv="X-UA-Compatible", content="IE=edge")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     link(rel="icon", href="https://cdn-icons-png.flaticon.com/512/4268/4268766.png", type="image/png", sizes="32x32")
-    link(rel="stylesheet", href="https://fonts.google.com/specimen/Public+Sans")
+    link(rel="preconnect", href="https://fonts.googleapis.com")
+    link(rel="preconnect", href="https://fonts.gstatic.com", crossorigin)
+    link(href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap", rel="stylesheet")
     link(rel="stylesheet", href="main.css")
     title Original Trombones
     meta(name="description", content="Original Trombones")
@@ -28,114 +30,90 @@ html(lang="en")
               a.nav__link.nav-link(href="#pricing") Pricing
     
     //MAIN
-    main.l-main 
-      .overlay
+    main.l-main
 
       //HERO
-      section.section
-        .section__wrapper
+      section.section.section--darker-bg
+        .section__wrapper.section__wrapper--hero
           h1.section__heading.section__heading--hero Handcrafted, home-made masterpieces
           form.form#form(action="https://www.freecodecamp.com/email-submit", method="post")
-            input.form__input--email#email(type="email", name="email", placeholder="Enter your email address")
-            input.form__input--submit#submit(type="submit", value="Get Started") 
+            input.form__input#email(type="email", name="email", placeholder="Enter your email address")
+            button.button-primary#submit(type="submit") Get Started 
 
       //FEATURES
-      section.section.section--darker-bg#features
-        .section__wrapper
-          h2.section__heading Why choose Original Trombones?
-          p.section__copy Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias aspernatur facilis corrupti necessitatibus, quod commodi consequatur illum, nostrum, harum quia doloremque assumenda accusamus nam vero ipsam aliquid optio dolorum architecto.
+      section.section#features
         .section__wrapper.section__wrapper--cards
           article.card 
-            .card__wrapper
+            .card__wrapper.card__wrapper--icon
               i.fa-solid.fa-star.fa-2xl
-            .card__wrapper
-              h3.card__heading Premium Materials
+            .card__wrapper.card__wrapper--text
+              h2.card__heading Premium Materials
               p.card__copy Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.
           article.card 
-            .card__wrapper
+            .card__wrapper.card__wrapper--icon
               i.fa-solid.fa-truck-fast.fa-2xl
-            .card__wrapper
-              h3.card__heading Fast Shipping
+            .card__wrapper.card__wrapper--text
+              h2.card__heading Fast Shipping
               p.card__copy We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.
           article.card 
-            .card__wrapper
+            .card__wrapper.card__wrapper--icon
               i.fa-solid.fa-shield-halved.fa-2xl
-            .card__wrapper
-              h3.card__heading Quality Assurance
+            .card__wrapper.card__wrapper--text
+              h2.card__heading Quality Assurance
               p.card__copy For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.
 
       //VIDEO
-      section.section#how-it-works
-        .section__wrapper
+      section.section.section--darker-bg#how-it-works
+        .section__wrapper.section__wrapper--video
           iframe.video#video(src="https://www.youtube.com/embed/8-fkvWFSeYc?rel=0&controls=0&showinfo=0", title="What does a trombone sound like?", frameborder="0", allowfullscreen) 
       
       //PRICING
-      section.section.section--darker-bg#pricing
-        .section__wrapper
-          h2.section__heading Pricing
+      section.section#pricing
         .section__wrapper.section__wrapper--pricing-cards 
           article.pricing-card
             .pricing-card__header 
-              h3.pricing-card__title TENOR TROMBONE
+              h2.pricing-card__title TENOR TROMBONE
             .pricing-card__body
-              h4.pricing-card__price $600
+              p.pricing-card__price $600
               ul.pricing-card__list
                 li.pricing-card__item Lorem ipsum.
                 li.pricing-card__item Lorem ipsum.
                 li.pricing-card__item Lorem ipsum dolor.
                 li.pricing-card__item Lorem ipsum.
-              button.pricing-card__button SELECT
+              button.button-primary SELECT
           article.pricing-card
             .pricing-card__header 
-              h3.pricing-card__title BASS TROMBONE
+              h2.pricing-card__title BASS TROMBONE
             .pricing-card__body
-              h4.pricing-card__price $900
+              p.pricing-card__price $900
               ul.pricing-card__list
                 li.pricing-card__item Lorem ipsum.
                 li.pricing-card__item Lorem ipsum.
                 li.pricing-card__item Lorem ipsum dolor.
                 li.pricing-card__item Lorem ipsum.
-              button.pricing-card__button SELECT
+              button.button-primary SELECT
           article.pricing-card
             .pricing-card__header 
-              h3.pricing-card__title VALVE TROMBONE
+              h2.pricing-card__title VALVE TROMBONE
             .pricing-card__body
-              h4.pricing-card__price $1200
+              p.pricing-card__price $1200
               ul.pricing-card__list
                 li.pricing-card__item Plays similar to a Trumpet.
                 li.pricing-card__item Great for Jazz Bands.
                 li.pricing-card__item Lorem ipsum dolor.
                 li.pricing-card__item Lorem ipsum.
-              button.pricing-card__button SELECT
+              button.button-primary SELECT
 
     //FOOTER
     footer.l-footer
       .footer__wrapper
-        .footer__wrapper
-          ul.social-icons__list  
-            li.social-icons__item 
-              a.social-icons__link(href="") 
-                i.fa-brands.fa-facebook
-            li.social-icons__item 
-              a.social-icons__link(href="") 
-                i.fa-brands.fa-youtube
-            li.social-icons__item 
-              a.social-icons__link(href="") 
-                i.fa-brands.fa-instagram
-            li.social-icons__item 
-              a.social-icons__link(href="") 
-                i.fa-brands.fa-twitter
-            li.social-icons__item 
-              a.social-icons__link(href="") 
-                i.fa-brands.fa-pinterest
-        .footer__wrapper
-          ul.footer-links__list 
-            li.footer-links__item 
-              a.footer-links__link(href="") Privacy
-            li.footer-links__item 
-              a.footer-links__link(href="") Terms
-            li.footer-links__item 
-              a.footer-links__link(href="") Contact
-          p.copyright © Original Trombones. All Rights Reserved
+        ul.footer-links 
+          li.footer-links__item 
+            a.footer-links__link(href="#") Privacy
+          li.footer-links__item 
+            a.footer-links__link(href="#") Terms
+          li.footer-links__item 
+            a.footer-links__link(href="#") Contact
+        p.copyright 2023, Original Trombones
 
     
