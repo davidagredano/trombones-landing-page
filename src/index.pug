@@ -36,28 +36,28 @@ html(lang="en")
       section.section.section--darker-bg
         .section__wrapper.section__wrapper--hero
           h1.section__heading.section__heading--hero Handcrafted, home-made masterpieces
-          form.form#form(action="https://www.freecodecamp.com/email-submit", method="post")
-            input.form__input#email(type="email", name="email", placeholder="Enter your email address")
-            button.button-primary#submit(type="submit") Get Started 
+          form.form#form(action="#", method="get")
+            input.form__input#email(type="email", name="email", placeholder="Enter your email address", required)
+            input.button-primary#submit(type="submit", value="Get Started")  
 
       //FEATURES
       section.section#features
         .section__wrapper.section__wrapper--cards
           article.card 
             .card__wrapper.card__wrapper--icon
-              i.fa-solid.fa-star.fa-2xl
+              i.card__icon.fa-solid.fa-star
             .card__wrapper.card__wrapper--text
               h2.card__heading Premium Materials
               p.card__copy Our trombones use the shiniest brass which is sourced locally. This will increase the longevity of your purchase.
           article.card 
             .card__wrapper.card__wrapper--icon
-              i.fa-solid.fa-truck-fast.fa-2xl
+              i.card__icon.fa-solid.fa-truck-fast
             .card__wrapper.card__wrapper--text
               h2.card__heading Fast Shipping
               p.card__copy We make sure you recieve your trombone as soon as we have finished making it. We also provide free returns if you are not satisfied.
           article.card 
             .card__wrapper.card__wrapper--icon
-              i.fa-solid.fa-shield-halved.fa-2xl
+              i.card__icon.fa-solid.fa-shield-halved
             .card__wrapper.card__wrapper--text
               h2.card__heading Quality Assurance
               p.card__copy For every purchase you make, we will ensure there are no damages or faults and we will check and test the pitch of your instrument.
@@ -105,15 +105,15 @@ html(lang="en")
               button.button-primary SELECT
 
     //FOOTER
-    footer.l-footer
+    footer.l-footer#footer
       .footer__wrapper
         ul.footer-links 
           li.footer-links__item 
-            a.footer-links__link(href="#") Privacy
+            a.footer-links__link(href="#footer") Privacy
           li.footer-links__item 
-            a.footer-links__link(href="#") Terms
+            a.footer-links__link(href="#footer") Terms
           li.footer-links__item 
-            a.footer-links__link(href="#") Contact
+            a.footer-links__link(href="#footer") Contact
         p.copyright 2023, Original Trombones
 
     

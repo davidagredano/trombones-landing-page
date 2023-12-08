@@ -4,7 +4,7 @@
   position: sticky;
   top: 0;
   width: 100%;
-  min-width: 320px;
+  min-width: 305px;
   height: auto;
   background-color: $color-neutral-stone-50;
   border-bottom: 1px solid $color-neutral-stone-200;
@@ -25,9 +25,11 @@
   height: 2rem;
   padding: 0 1rem 0 0;
 }
+
 .nav {
   @include reset;
   width: 100%;
+
   &__list {
     @include reset;
     @include flex(row, center, center, 2rem);
@@ -45,23 +47,21 @@
     line-height: 1rem;
 
     &:hover {
-      color: $color-primary-Dark-Gray;
+      color: $color-neutral-stone-800;
       padding-bottom: calc(1rem - 6px);
-      border-bottom: 4px solid $color-primary-Yellow-Pale;
+      border-bottom: 4px solid $color-primary;
     }
-
     &:active {
-      color: $color-primary-Yellow-Pale;
+      color: darken($color-primary, 20%);
     }
   }
 }
 
-// ---------------------------- MEDIA QUERIES ----------------------------
-@include media(635px) {
+@include media(650px) {
   .header {
     &__wrapper {
       @include flex(row, space-between, center, 2rem);
-      padding: 1rem 1.5rem 1rem 0;
+      padding: 1rem 2rem 1rem 1rem;
     }
   }
   .logo {

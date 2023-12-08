@@ -1,22 +1,34 @@
+// offset for nav inner links scrolling to propper position
+
 #features,
 #how-it-works,
 #pricing {
-  scroll-margin-top: 96px;
+  scroll-margin-top: 95px;
 }
+@include media(635px) {
+  #features,
+  #how-it-works,
+  #pricing {
+    scroll-margin-top: 63px;
+  }
+}
+
+// main layout
 
 .l-main {
   @include flex(column, center, center, 0);
   margin: 0 auto;
 }
 
+// generic section (shared base class) component
+
 .section {
   background-color: $color-neutral-stone-50;
   width: 100%;
-  
+
   & + .section {
     border-top: 1px solid $color-neutral-stone-200;
   }
-
   &--darker-bg {
     background-color: $color-neutral-stone-100;
   }
@@ -30,24 +42,32 @@
       @include flex(column, center, center, 1rem);
     }
     &--cards {
-      @include flex(column, center, center, 3rem);
+      @include flex(column, center, start, 3rem);
+      max-width: 830px;
+      padding: 2rem 1rem;
     }
     &--video {
-      padding: 2rem 0;
+      padding: 2rem 1rem;
     }
     &--pricing-cards {
       @include flex(row, center, center, 2rem);
       flex-wrap: wrap;
     }
   }
-
   &__heading {
     @include reset;
     text-align: center;
-    &--hero {
-    }
+    font-size: 1.7rem;
   }
 }
+
+@include media(375px) {
+  .section__wrapper--cards {
+    padding: 2rem;
+  }
+}
+
+// hero form component
 
 .form {
   @include flex(column, center, center, 1rem);
@@ -60,31 +80,36 @@
   }
 }
 
+// button component
+
 .button-primary {
   @include reset;
   display: block;
   height: 2.5rem;
   padding: 0 1.5rem;
-  @include font(1rem, $font-weight-bold, $color-primary-Dark-Gray);
+  @include font(1rem, $font-weight-bold, $color-neutral-stone-800);
   text-transform: uppercase;
-  background-color: $color-primary-Yellow-Pale;
+  background-color: $color-primary;
   border: 0;
   border-radius: 0.2rem;
   line-height: 1rem;
 
   &:hover {
     cursor: pointer;
-    background-color: darken($color-primary-Yellow-Pale, 10%);
+    background-color: darken($color-primary, 10%);
+  }
+  &:active {
+    background-color: lighten($color-primary, 10%);
   }
 }
+
+// card component
 
 .card {
   &__wrapper {
     &--icon {
-      visibility: hidden;
-      height: 0;
+      display: none;
     }
-
     &--text {
       text-align: center;
     }
@@ -93,38 +118,64 @@
   &__heading {
     @include reset;
     margin-bottom: 0.5rem;
+    font-size: 1.7rem;
   }
-
   &__copy {
     @include reset;
+    font-size: 1.15rem;
   }
 }
+
+@include media(550px) {
+  .card {
+    @include flex(row, center, center, 2rem);
+
+    &__wrapper {
+      &--icon {
+        display: block;
+        @include flex(row, center, center, 2rem);
+        min-width: 100px;
+      }
+      &--text {
+        text-align: start;
+      }
+    }
+    &__icon {
+      font-size: 3rem;
+      color: darken($color-primary, 10%);
+    }
+  }
+}
+
+// video component
 
 .video {
   aspect-ratio: 16 / 9;
   width: 100%;
+  border-radius: 0.25rem;
 }
+
+// pricing card component
 
 .pricing-card {
   @include reset;
   border: 1px solid $color-neutral-stone-600;
-  border-radius: 0.2rem;
+  border-radius: 0.25rem;
   text-align: center;
-  flex: 1 1 250px;
+  flex: 1 0 270px;
+  max-width: 400px;
 
   &__header {
     @include reset;
     padding: 1rem;
     background-color: $color-neutral-stone-200;
-    border-radius: 0.2rem 0.2rem 0 0;
+    border-radius: 0.25rem 0.25rem 0 0;
     border-bottom: 1px solid $color-neutral-stone-300;
   }
-
   &__title {
     @include reset;
     font-size: 1rem;
   }
-
   &__body {
     @include reset;
     padding: 1rem;

@@ -5,15 +5,15 @@
 
 .footer__wrapper {
   @include reset;
-  padding: 2rem;
+  padding: 2rem 2rem;
   max-width: 1110px;
   margin: 0 auto;
-  @include flex(column, space-between, center, 1rem)
+  @include flex(column, space-between, center, 1rem);
 }
 
 .footer-links {
   @include reset;
-  @include flex(row, end, center, 3rem);
+  @include flex(row, end, center, 2rem);
 
   &__item {
     @include reset;
@@ -22,17 +22,16 @@
   &__link {
     @include reset;
     text-decoration: none;
-    color: $color-primary-Dark-Gray;
+    color: $color-neutral-stone-800;
 
     &:hover {
       color: $color-neutral-stone-600;
       padding-bottom: 2px;
       border-bottom: 1px solid $color-neutral-stone-600;
     }
-    
     &:active {
-      color: $color-primary-Yellow-Pale;
-      border-bottom: 1px solid $color-primary-Yellow-Pale;
+      color: darken($color-primary, 20%);
+      border-bottom: 1px solid darken($color-primary, 20%);
     }
   }
 }
@@ -41,4 +40,11 @@
   @include reset;
   color: $color-neutral-stone-600;
   text-align: end;
+}
+
+@include media(520px) {
+  .footer__wrapper {
+    flex-direction: row;
+    padding-bottom: 2rem;
+  }
 }

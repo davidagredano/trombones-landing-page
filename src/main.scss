@@ -1,0 +1,17 @@
+@import "style-guide-variables";
+@import "utilities";
+
+:root {
+  scroll-behavior: smooth;
+}
+
+.l-body {
+  @include reset;
+  @include flex-item-center;
+  font-family: "Lato", sans-serif;
+  color: $color-neutral-stone-800;
+}
+
+@import "1-header";
+@import "2-main";
+@import "3-footer";
